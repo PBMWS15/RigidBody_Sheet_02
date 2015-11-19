@@ -153,6 +153,8 @@
     <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ode.h" />
+    <ClInclude Include="printer.h" />
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Simulation.h" />
     <ClInclude Include="State.h" />

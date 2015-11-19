@@ -38,5 +38,11 @@
     <ClInclude Include="Simulation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="printer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

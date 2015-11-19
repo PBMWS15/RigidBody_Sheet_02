@@ -1,5 +1,7 @@
 #pragma once
 #include"State.h"
+#include <array>
+
 class RigidBody : public State
 {
 public:
@@ -10,7 +12,7 @@ public:
     glm::dvec3 getLinearMomentum();
     glm::dmat3 getInverseTensor();
     glm::dvec3 getForce();
-
+    void update(double deltaTime);
     void setOrientation(const glm::dmat3 orientation);
     void setLinearMomentum(glm::dvec3 linMoment);
     void setAngularMomentum(glm::dvec3 angMoment);
@@ -20,7 +22,11 @@ public:
     glm::dvec3 getAngularVelocity();
     glm::dvec3 getTorque();
     void setForce(glm::dvec3 force);
+    std::array<double, 18> getStateArray();
+    std::array<double, 18> getDtStateArray();
 private:
+    void calculateForceAndTorque(bool nudge = false);
+    void setStateAndCalc(const std::array<double, 18>& data);
     glm::dmat3 _orientation;
     glm::dmat3 _inertiaTensor;
     

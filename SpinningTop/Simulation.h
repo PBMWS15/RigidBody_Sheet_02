@@ -19,12 +19,7 @@ private:
     double _deltaTime;
     
 
-    std::array<double, 18> StateToArray();
-    void ArrayToRigidBody(const std::array<double,18>& data);
 
-    std::array<double, 18> DtStateToArray();
-
-    std::array<double, 18> dxdt(double t, std::array<double, 18> &rgData);
     
 
 
