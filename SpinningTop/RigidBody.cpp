@@ -165,17 +165,11 @@ void RigidBody::calculateForceAndTorque(bool nudge)
 
 
     glm::dvec3 r = _orientation*glm::dvec3{ 0.0,0.0,0.75*_height }+getPosition();
-    //auto a_ext = _force / _mass + glm::cross(_invertedIntertiaTensor*_torque, r - getPosition());
-    //auto a_vel = glm::cross(_angularVelocity, r - getPosition());
-    //auto b = glm::dot(normal, (a_ext + a_vel));
-    //auto torqueDirection = glm::cross(r, normal);
-    //auto a_angular = glm::cross(_invertedIntertiaTensor*torqueDirection, r - getPosition());
-    //auto a = glm::dot(normal, normal/_mass + a_angular);    
-    //auto f_ext = -b / a;
+   
 
     _force += normal*9.81;
     _torque += glm::cross(r - getPosition(), _force);
- //   _torque += glm::dvec3{ 0.0,0.0,1.0 }-_angularVelocity;
+ 
 }
 
 void RigidBody::setStateAndCalc(const std::array<double, 18>& data)

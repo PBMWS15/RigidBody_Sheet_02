@@ -65,13 +65,8 @@ void Simulation::run()
         //renders a line that represents the handle of the spinning top as a 2d projection
         SDL_RenderDrawLine(renderer, 100, 190, 100+100*up.y, 190- 100 * up.z);
         SDL_RenderPresent(renderer);
-        //printVec(up);
-      /*  auto angularVelocity = _rigidBody.getAngularVelocity();
-        std::cout << glm::length(angularVelocity)<<std::endl;
-        std::cout << std::endl;
-        */
-        //simulate up to frame time
-        
+     
+
         update(_deltaTime);
         t += _deltaTime;
 
