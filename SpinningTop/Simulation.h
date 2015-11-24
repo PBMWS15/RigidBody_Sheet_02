@@ -1,7 +1,6 @@
 #pragma once
 #include"RigidBody.h"
-#include <array>
-
+#include<SDL/SDL.h>
 class Simulation
 {
 public:
@@ -11,12 +10,14 @@ public:
 
     void run();
     void update(double deltaTime);
-
+    void applyNudge();
+    RigidBody getRigidBody() const;
 private:
     RigidBody _rigidBody;
     double _tStart;
     double _tEnd;
     double _deltaTime;
+    bool _nudge = false;
     
 
 

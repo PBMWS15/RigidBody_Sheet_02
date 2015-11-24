@@ -12,6 +12,8 @@ namespace ODE
         T time = t0 + h;
 
         std::array<T, N> u1, u2, u3;
+
+
         std::array<T, N> k1 = derivative(t0, u0);
 
         for (size_t i = 0; i < N; i++)
